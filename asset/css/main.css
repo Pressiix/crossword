@@ -1,0 +1,87 @@
+.crossword {
+    border-collapse: collapse;
+    clear: both;
+}
+
+.crossword td {
+    border: 3px solid black;
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+    padding: 0;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+}
+
+.crossword .no-border {
+    border: none;
+}
+
+input {
+    border: 0;
+    padding: 0;
+    background: transparent;
+    outline: 0;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.error {
+    background: red;
+}
+
+.passed {
+    background: #9EFF00;
+}
+
+.show-answer {
+    -webkit-animation: SHOW-HINT 1s infinite;
+    /* Safari 4+ */
+    -moz-animation: SHOW-HINT 1s infinite;
+    /* Fx 5+ */
+    -o-animation: SHOW-HINT 1s infinite;
+    /* Opera 12+ */
+    animation: SHOW-HINT 1s infinite;
+    /* IE 10+, Fx 29+ */
+}
+
+@-webkit-keyframes SHOW-HINT {
+    0%,
+    49% {
+        background-color: #fcf803;
+    }
+    50%,
+    100% {
+        background-color: #ffff;
+    }
+}
+
+@-webkit-keyframes INPUT-FOCUS {
+    0%,
+    49% {
+        background-color: #dedfe0;
+    }
+    50%,
+    100% {
+        background-color: #ffff;
+    }
+}
+
+input {
+    height: 30px;
+    font-weight: bold;
+}
+
+input:focus {
+    height: 30px;
+    -webkit-animation: INPUT-FOCUS 1s infinite;
+    /* Safari 4+ */
+    -moz-animation: INPUT-FOCUS 1s infinite;
+    /* Fx 5+ */
+    -o-animation: INPUT-FOCUS 1s infinite;
+    /* Opera 12+ */
+    animation: INPUT-FOCUS 1s infinite;
+    /* IE 10+, Fx 29+ */
+}

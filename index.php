@@ -89,7 +89,7 @@
             
             var current_score = 0;
             var max_score = gridCount(grid);
-            var Minutes = 1; //Set a default minute
+            var Minutes = 0.2; //Set a default minute
             
             /**
              *   Action when a screen loads
@@ -191,7 +191,6 @@
                 $("#score").text(current_score + "/" + max_score);
                 $('#div_session_write').load("_session.php?last_score="+current_score);
                 current_score = 0;
-                
             }
 
             //Show Answer Button
@@ -207,10 +206,10 @@
 
                     inputVal = answers[i].getAttribute("data-answer").toUpperCase();
                     position = answers[i].getAttribute("position");
-                    $("input[position='" + position + "']").val(inputVal);
+                    $("input[position='" + position + "']").attr("placeholder",inputVal);
                     $("input[position='" + position + "']").attr("disabled", "disabled");
                     $("td[title='" + position + "']").css("border", "solid grey");
-                    $("button[id='check-answer']").attr("disabled", "disabled");
+                    //$("button[id='check-answer']").attr("disabled", "disabled");
                     $("button[id='show-answer']").attr("disabled", "disabled");
                     answers[i].parentElement.classList.remove("error");
                     answers[i].parentElement.classList.remove("passed");

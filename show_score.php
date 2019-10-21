@@ -8,7 +8,7 @@
     <h1 id="toptitle"></h1>
     <script>
         <?php session_start(); ?>
-        $("#toptitle").text("Your score is <?= $_SESSION["score"] ?>");
+        $("#toptitle").text("Your score : <?= $_SESSION["score"] ?>");
         <?php
             $_SESSION["score"] = 0;
         ?>

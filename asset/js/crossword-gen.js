@@ -395,7 +395,7 @@ function Crossword(words_in, clues_in) {
 }
 
 var CrosswordUtils = {
-    PATH_TO_PNGS_OF_NUMBERS: "numbers/",
+    //PATH_TO_PNGS_OF_NUMBERS: "numbers/",
 
     toHtml: function(grid, show_answers) {
 
@@ -435,7 +435,6 @@ var CrosswordUtils = {
                     start_num = label;
                     label++;
                 } else {
-
                     start_num = 0;
                 }
 
@@ -447,9 +446,9 @@ var CrosswordUtils = {
 
                     } else {
                         if (start_num !== 0) {
-                            html.push("<input class='cw' type='text'  root='" + rootWord + "' position='" + r + "," + c + "' maxlength='1' placeholder='" + start_num + "' tabindex='"+tabIndex+"' data-answer='" + answer + "' />");
+                            html.push("<input class='cw' type='text'  root='" + rootWord + "' position='" + r + "," + c + "' maxlength='1' placeholder='" + start_num + "' tabindex='" + tabIndex + "' data-answer='" + answer + "' />");
                         } else {
-                            html.push("<input class='cw' type='text' root='" + rootWord + "' position='" + r + "," + c + "' maxlength='1' tabindex='"+tabIndex+"' data-answer='" + answer + "' />");
+                            html.push("<input class='cw' type='text' root='" + rootWord + "' position='" + r + "," + c + "' maxlength='1' tabindex='" + tabIndex + "' data-answer='" + answer + "' />");
                         }
                         //console.log("<input type='text'  root='" + rootWord + "' position='" + r + "," + c + "' maxlength='1' placeholder='" + start_num + "' data-answer='" + answer + "' />");
                     }

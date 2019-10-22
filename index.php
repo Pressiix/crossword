@@ -9,7 +9,6 @@
     <script src="asset/bootstrap/jquery.min.js"></script>
     <script src="asset/bootstrap/popper.min.js"></script>
     <script src="asset/bootstrap/bootstrap.min.js"></script>
-    <script src="asset/js/jquery.dform-1.1.0.js"></script>
     <script>
         window.console = window.console || function(t) {};
     </script>
@@ -97,19 +96,6 @@
              *   Action when a screen loads
              */
             $(document).ready(function(){
-                
-                $(document).on('keypress', 'input,select', function (e) {
-                if (e.which == 13) {
-                    e.preventDefault();
-                    var $next = $('[tabindex=' + (+this.tabIndex + 1) + ']');
-                    console.log($next);
-                    if (!$next.length) {
-                        $next = $('[tabIndex=1]');
-                    }
-                    $next.focus();
-                }
-            });
-
                 /**
                  *   Countdown Timer
                  ***************************************/

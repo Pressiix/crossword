@@ -403,17 +403,15 @@ var CrosswordUtils = {
         var html = [];
         html.push("<table class='crossword'>");
         var label = 1;
-        var a = [];
+        var tabIndex = 1;
+        var start_num = 0;
+        var answer = '';
+        var rootWord = '';
+
         for (var r = 0; r < grid.length; r++) {
             html.push("<tr>");
             for (var c = 0; c < grid[r].length; c++) {
                 var cell = grid[r][c];
-                var start_num = 0;
-                var answer = '';
-                var rootWord = '';
-
-
-
                 var is_start_of_word = false;
 
                 if (cell == null) {
@@ -441,7 +439,6 @@ var CrosswordUtils = {
                     start_num = 0;
                 }
 
-
                 if (cell != null) {
 
                     if (show_answers) {
@@ -450,9 +447,9 @@ var CrosswordUtils = {
 
                     } else {
                         if (start_num !== 0) {
-                            html.push("<input type='text'  root='" + rootWord + "' position='" + r + "," + c + "' maxlength='1' placeholder='" + start_num + "' data-answer='" + answer + "' />");
+                            html.push("<input class='cw' type='text'  root='" + rootWord + "' position='" + r + "," + c + "' maxlength='1' placeholder='" + start_num + "' tabindex='"+tabIndex+"' data-answer='" + answer + "' />");
                         } else {
-                            html.push("<input type='text' root='" + rootWord + "' position='" + r + "," + c + "' maxlength='1' data-answer='" + answer + "' />");
+                            html.push("<input class='cw' type='text' root='" + rootWord + "' position='" + r + "," + c + "' maxlength='1' tabindex='"+tabIndex+"' data-answer='" + answer + "' />");
                         }
                         //console.log("<input type='text'  root='" + rootWord + "' position='" + r + "," + c + "' maxlength='1' placeholder='" + start_num + "' data-answer='" + answer + "' />");
                     }
@@ -460,7 +457,7 @@ var CrosswordUtils = {
                 } else {
                     html.push("&nbsp;");
                 }
-
+                tabIndex++;
             }
             html.push("</tr>");
         }

@@ -9,7 +9,7 @@
     <script src="asset/bootstrap/jquery.min.js"></script>
     <script src="asset/bootstrap/popper.min.js"></script>
     <script src="asset/bootstrap/bootstrap.min.js"></script>
-
+    <script src="asset/js/jquery.dform-1.1.0.js"></script>
     <script>
         window.console = window.console || function(t) {};
     </script>
@@ -68,7 +68,7 @@
         <div id='div_session_write'> </div>
 
         <script src="asset/js/stopExecutionOnTimeout.js"></script>
-        <script src="asset/js/crossword-gen.js"></script>
+        <script src="asset/js/crossword-gen.js?v=0.5"></script>
         <script id="rendered-js">
             /** WORDS */
             var words = ["sushi", "html", "javascript", "flash", "css", "puzzle", "cat", "elephant"];
@@ -89,12 +89,27 @@
             
             var current_score = 0;
             var max_score = gridCount(grid);
-            var Minutes = 0.2; //Set a default minute
+            var Minutes = 1; //Set a default minute
             
+            
+
             /**
              *   Action when a screen loads
              */
             $(document).ready(function(){
+                
+                $(document).on('keypress', 'input,select', function (e) {
+                if (e.which == 13) {
+                    e.preventDefault();
+                    var $next = $('[tabindex=' + (+this.tabIndex + 1) + ']');
+                    console.log($next);
+                    if (!$next.length) {
+                        $next = $('[tabIndex=1]');
+                    }
+                    $next.focus();
+                }
+            });
+
                 /**
                  *   Countdown Timer
                  ***************************************/
